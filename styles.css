@@ -1,0 +1,131 @@
+        /* Style de la page */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        /* Message de statut */
+        #statut {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 0;
+            height: 30px;
+            color: #667eea;
+        }
+
+        /* Grille de jeu */
+        .grille {
+            display: grid;
+            grid-template-columns: repeat(3, 120px);
+            grid-template-rows: repeat(3, 120px);
+            gap: 10px;
+            margin: 20px auto;
+            justify-content: center;
+        }
+
+        /* Cases du jeu */
+        .case {
+            background: #f0f0f0;
+            border: none;
+            border-radius: 10px;
+            font-size: 48px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .case:hover {
+            background: #e0e0e0;
+            transform: scale(1.05);
+        }
+
+        .case:disabled {
+            cursor: not-allowed;
+        }
+
+        /* Couleurs pour X et O */
+        .case.x {
+            color: #3498db;
+        }
+
+        .case.o {
+            color: #e74c3c;
+        }
+
+        /* Case gagnante */
+        .case.gagnant {
+            background: #2ecc71 !important;
+            color: white !important;
+            animation: pulse 0.5s;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        /* Bouton recommencer */
+        #recommencer {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+
+        #recommencer:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Compteur de scores */
+        .scores {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        .score {
+            padding: 10px 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .score-x {
+            color: #3498db;
+        }
+
+        .score-o {
+            color: #e74c3c;
+        }
